@@ -11,12 +11,9 @@
   <div class="header">
     <div class="topbar">
       <h1>Shoes</h1>
-      {% if session.get("user") %}
+      
       <a href="/add">Add Shoe</a>
-      <a href="/logout">Logout</a>
-      {% else %}
-      <a href="/login">Login</a>
-      {% endif %}
+      
     </div>
 
     <div class="search-wrapper">
