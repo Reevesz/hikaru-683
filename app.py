@@ -135,6 +135,7 @@ def add():
             "image": image_url,
             "desc": request.form.get("desc"),
             "onsale": request.form.get("onsale"),
+            "uaq": request.form.get("uaq"),
             "sizes": sizes
         }
 
