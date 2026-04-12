@@ -223,3 +223,95 @@ a {
   cursor: pointer;
 }
 
+
+/* ---------- MOBILE OPTIMIZATION ---------- */
+@media (max-width: 600px) {
+
+  /* HEADER */
+  .header {
+    padding: 10px 12px 10px;
+  }
+
+  .topbar {
+    margin-bottom: 8px;
+  }
+
+  .topbar h1 {
+    font-size: 16px;
+  }
+
+  .add-btn {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  /* SEARCH */
+  .search-wrapper input {
+    padding: 10px 12px 10px 34px;
+    font-size: 13px;
+    border-radius: 12px;
+  }
+
+  /* MAIN CONTAINER */
+  .container {
+    padding: 12px;
+    margin-top: 95px;
+  }
+
+  /* CARDS */
+  .card {
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .card h3 {
+    font-size: 14px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+
+  /* BUTTONS (better touch targets) */
+  .delete,
+  .copy-btn {
+    font-size: 12px;
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+
+  /* FORM */
+  form input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  form button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+}
+
+/* ---------- EXTRA SMALL (tight phones) ---------- */
+@media (max-width: 400px) {
+
+  .topbar h1 {
+    font-size: 15px;
+  }
+
+  .add-btn {
+    padding: 4px 7px;
+    font-size: 11px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+}
+
+.card img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}

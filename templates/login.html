@@ -120,6 +120,63 @@
       animation: glow 4s infinite ease-in-out;
     }
 
+/* ---------- MOBILE FIX ---------- */
+@media (max-width: 600px) {
+
+  body {
+    padding: 16px; /* prevents edge sticking */
+  }
+
+  .login-box {
+    width: 100%;
+    max-width: 420px;   /* allows it to grow bigger than before */
+    padding: 28px 20px;
+    border-radius: 14px;
+  }
+
+  .login-box h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .input-group {
+    margin-bottom: 20px;
+  }
+
+  .input-group input {
+    padding: 14px;       /* bigger touch target */
+    font-size: 15px;
+  }
+
+  button {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .footer {
+    font-size: 11px;
+  }
+}
+
+/* ---------- EXTRA SMALL PHONES ---------- */
+@media (max-width: 400px) {
+
+  .login-box {
+    padding: 24px 16px;
+  }
+
+  .login-box h2 {
+    font-size: 18px;
+  }
+
+}
+
+.input-group input:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 11px;
+  color: #00ff88;
+}
+
   </style>
 </head>
 <body>
