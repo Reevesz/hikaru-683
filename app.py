@@ -136,6 +136,7 @@ def add():
             "desc": request.form.get("desc"),
             "onsale": request.form.get("onsale"),
             "uaq": request.form.get("uaq"),
+            "mn": request.form.get("mn"),
             "sizes": sizes
         }
 
