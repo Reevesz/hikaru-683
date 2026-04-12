@@ -315,3 +315,34 @@ a {
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
+
+/* ---------- HARD MOBILE FIX ---------- */
+@media (max-width: 600px) {
+
+  body {
+    padding: 20px;
+  }
+
+  .login-box {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    padding: 32px 24px !important;
+
+    border-radius: 18px;
+  }
+
+  .login-box h2 {
+    font-size: 22px;
+  }
+
+  .input-group input {
+    padding: 16px !important;
+    font-size: 16px !important; /* prevents iOS zoom */
+  }
+
+  button {
+    padding: 16px !important;
+    font-size: 16px !important;
+  }
+}
