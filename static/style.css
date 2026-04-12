@@ -1,0 +1,225 @@
+/* ---------- RESET / BASE ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0f0f10;
+  color: #fff;
+}
+
+/* ---------- HEADER (PREMIUM) ---------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  padding: 14px 16px 12px;
+
+  background: rgba(15, 15, 16, 0.75);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* top row */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.topbar h1 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* add button */
+.add-btn {
+  text-decoration: none;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #1f1f23;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.add-btn:hover {
+  background: #2a2a2e;
+}
+
+/* ---------- SEARCH BAR ---------- */
+.search-wrapper {
+  position: relative;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 12px 14px 12px 38px;
+
+  border-radius: 14px;
+  border: none;
+  outline: none;
+
+  background: #1a1a1d;
+  color: white;
+
+  font-size: 14px;
+
+  transition: all 0.25s ease;
+}
+
+/* icon */
+.search-wrapper::before {
+  content: "🔍";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.6;
+}
+
+/* focus effect */
+.search-wrapper input:focus {
+  background: #222;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.4);
+  transform: scale(1.02);
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.container {
+  padding: 16px;
+  margin-top: 110px; /* space for fixed header */
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  background: #1a1a1d;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 16px;
+
+  transition: 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+.card h3 {
+  margin: 10px 0 4px;
+  font-size: 15px;
+}
+
+.card p {
+  margin: 0;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+/* delete button */
+.delete {
+  display: inline-block;
+  margin-top: 8px;
+
+  font-size: 13px;
+  padding: 6px 10px;
+
+  border-radius: 8px;
+  text-decoration: none;
+
+  background: rgba(255, 0, 0, 0.15);
+  color: #ff4d4d;
+
+  transition: 0.2s;
+}
+
+.delete:hover {
+  background: rgba(255, 0, 0, 0.25);
+}
+
+/* ---------- ADD PAGE FORM ---------- */
+form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+
+  border-radius: 10px;
+  border: none;
+  outline: none;
+
+  background: #1a1a1d;
+  color: white;
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+
+  border-radius: 12px;
+  border: none;
+
+  background: #4caf50;
+  color: white;
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+form button:hover {
+  background: #43a047;
+}
+
+/* ---------- EMPTY STATE ---------- */
+#results p {
+  text-align: center;
+  opacity: 0.6;
+  margin-top: 20px;
+}
+
+
+a {
+    text-decoration: none;
+    color: thistle;
+}
+
+
+.copy-btn {
+  display: inline-block;
+  margin-top: 8px;
+
+  font-size: 13px;
+  padding: 6px 10px;
+
+  border-radius: 8px;
+  text-decoration: none;
+
+  background: rgba(0, 119, 255, 0.15);
+  color: #4d9aff;
+
+  transition: 0.2s;
+}
+
+.copy-btn:hover {
+  cursor: pointer;
+}
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shoes</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="topbar">
+      <h1>Shoes</h1>
+      {% if session.get("user") %}
+      <a href="/add">Add Shoe</a>
+      <a href="/logout">Logout</a>
+      {% else %}
+      <a href="/login">Login</a>
+      {% endif %}
+    </div>
+
+    <div class="search-wrapper">
+      <input type="text" id="search" placeholder="Search shoes...">
+    </div>
+  </div>
+  <div class="container">
+
+    <div id="results">
+      {% for shoe in shoes %}
+      <div class="card">
+        <img src="{{ shoe.image }}">
+        <h3>{{ shoe.name }}</h3>
+        <p>₹{{ shoe.price }}</p>
+        <a href="/delete/{{ shoe.id }}" class="delete">Delete</a>
+        <span class="copy-btn" data-id="{{ shoe.id }}">COPY LINK</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById("search");
+    const resultsDiv = document.getElementById("results");
+
+    let timeout;
+    function attachCopyHandlers() {
+      document.querySelectorAll(".copy-btn").forEach(btn => {
+        btn.onclick = () => {
+          const id = btn.getAttribute("data-id");
+
+          navigator.clipboard.writeText(id)
+            .then(() => {
+              btn.innerText = "COPIED!";
+              setTimeout(() => btn.innerText = "COPY LINK", 1500);
+            })
+            .catch(() => {
+              alert("Failed to copy");
+            });
+        };
+      });
+    }
+
+    // run once on load
+    attachCopyHandlers();
+
+
+    searchInput.addEventListener("input", () => {
+      clearTimeout(timeout);
+
+      timeout = setTimeout(async () => {
+        const query = searchInput.value;
+
+        const res = await fetch(`/search?q=${query}`);
+        const data = await res.json();
+
+        resultsDiv.innerHTML = "";
+
+        if (data.results.length === 0) {
+          resultsDiv.innerHTML = "<p>No results found</p>";
+          return;
+        }
+
+        data.results.forEach(shoe => {
+          resultsDiv.innerHTML += `
+    <div class="card">
+      <img src="${shoe.image}">
+      <h3>${shoe.name}</h3>
+      <p>₹${shoe.price}</p>
+      <a href="/delete/${shoe.id}" class="delete">Delete</a>
+      <span class="copy-btn" data-id="${shoe.id}">COPY LINK</span>
+    </div>
+  `;
+        });
+
+      }, 300);
+    });
+  </script>
+
+</body>
+
+</html>

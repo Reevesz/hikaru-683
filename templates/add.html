@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Add Shoe</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Add Shoe</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+      <input name="name" placeholder="Name" required>
+      <input name="b_id" placeholder="Brand ID" required>
+      <input name="price" placeholder="Price" required>
+
+      <input type="file" name="image" required>
+
+      <input name="desc" placeholder="Description.." required>
+      <input name="onsale" placeholder="IS On sale Y / N" required>
+
+      <div>
+        <label>Available Sizes:</label><br>
+
+        <label><input type="checkbox" name="sizes" value="40"> 40</label>
+        <label><input type="checkbox" name="sizes" value="41"> 41</label>
+        <label><input type="checkbox" name="sizes" value="42"> 42</label>
+        <label><input type="checkbox" name="sizes" value="43"> 43</label>
+        <label><input type="checkbox" name="sizes" value="44"> 44</label>
+        <label><input type="checkbox" name="sizes" value="45"> 45</label>
+      </div>
+      <button type="submit">Add</button>
+    </form>
+
+    <a href="/">⬅ Back</a>
+  </div>
+
+</body>
+
+</html>
